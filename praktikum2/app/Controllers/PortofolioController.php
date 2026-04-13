@@ -25,13 +25,8 @@ class PortofolioController extends BaseController
         ],
     ];
 
-    public $data = [
-        'title' => 'Halaman Beranda',
-        'metaDescription' => 'Ini adalah deskripsi halaman beranda aplikasi saya.'
-    ];
-
     public function index()
     {
-        return view('portofolio/index', ['profile' => $this->dataDiri, $this->data]);
+        return view('portofolio/index', ['profile' => $this->dataDiri]);
     }
 }
