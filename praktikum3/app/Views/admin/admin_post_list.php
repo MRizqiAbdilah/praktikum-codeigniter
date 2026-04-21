@@ -3,6 +3,8 @@
 <?= $this->section('content') ?>
 
 <div class="container">
+               <a href="<?= base_url('admin/post/new') ?>"
+                           class="btn btn-sm btn-primary" target="_blank">Buat Artikel</a>
         <table class="table">
             <thead>
                 <tr>
