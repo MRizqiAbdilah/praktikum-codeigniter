@@ -20,6 +20,8 @@ class Post extends BaseController
             'status',
             'published'
         )->findAll();
+        $data['title'] = 'Blog | MyBlog';
+        $data['pageHeading'] = 'Daftar Artikel';
         // kirim data ke view
         echo view('post', $data);
     }
@@ -37,6 +39,8 @@ class Post extends BaseController
             throw
             PageNotFoundException::forPageNotFound();
         }
+        $data['title'] = $data['post']['title'] . ' | MyBlog';
+        $data['pageHeading'] = $data['post']['title'];
         echo view('post_detail', $data);
     }
 }

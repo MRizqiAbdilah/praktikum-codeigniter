@@ -13,6 +13,8 @@ class PostAdmin extends BaseController
     {
         $post = new PostModel();
         $data['posts'] = $post->findAll();
+        $data['title'] = 'Blog | MyBlog';
+        $data['pageHeading'] = 'Daftar Artikel';
         echo view('admin/admin_post_list', $data);
     }
 
@@ -26,6 +28,9 @@ class PostAdmin extends BaseController
         if(!$data['post']){
             throw PageNotFoundException::forPageNotFound();
         }
+
+        $data['title'] = 'Blog | MyBlog';
+        $data['pageHeading'] = 'Detail Artikel';
         echo view('post_detail', $data);
     }
 
@@ -50,8 +55,11 @@ class PostAdmin extends BaseController
             return redirect('admin/post');
         }
 
+        $data['title'] = 'Blog | MyBlog';
+        $data['pageHeading'] = 'Create Artikel';
+
         // tampilkan form create
-        echo view('admin/admin_post_create');
+        echo view('admin/admin_post_create', $data);
     }
 
     //--------------------------------------------------------------
@@ -79,6 +87,9 @@ class PostAdmin extends BaseController
             ]);
             return redirect('admin/post');
         }
+
+        $data['title'] = 'Blog | MyBlog';
+        $data['pageHeading'] = 'Edit Artikel';
 
         // tampilkan form edit
         echo view('admin/admin_post_update', $data);

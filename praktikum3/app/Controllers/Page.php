@@ -8,16 +8,25 @@ class Page extends BaseController
 {
     public function about()
     {
-        echo view("about");
+        echo view('about', [
+            'title' => 'About | MyBlog',
+            'pageHeading' => 'Tentang Kami',
+        ]);
     }
 
     public function contact()
     {
-        echo view("contact");
+        echo view('contact', [
+            'title' => 'Contact | MyBlog',
+            'pageHeading' => 'Hubungi Kami',
+        ]);
     }
 
     public function faqs()
     {
-        echo view("Faqs");
+        echo view('faqs', [
+            'title' => 'FAQ | MyBlog',
+            'pageHeading' => 'Pertanyaan yang Sering Ditanyakan',
+        ]);
     }
 }
