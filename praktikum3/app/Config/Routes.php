@@ -10,6 +10,9 @@ $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 
+$routes->get('login', 'AuthController::login', ['as' => 'login']);
+$routes->post('login', 'AuthController::attemptLogin');
+
 $routes->get('/post', 'Post::index');
 $routes->get('/post/(:any)', 'Post::viewPost/$1');
 

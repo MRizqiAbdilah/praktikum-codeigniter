@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\PostModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
@@ -56,7 +55,7 @@ class PostAdmin extends BaseController
         }
 
         $data['title'] = 'Blog | MyBlog';
-        $data['pageHeading'] = 'Create Artikel';
+        $data['pageHeading'] = 'Buat Artikel';
 
         // tampilkan form create
         echo view('admin/admin_post_create', $data);

@@ -12,9 +12,13 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
+use Myth\Auth\Filters\LoginFilter;
+use Myth\Auth\Filters\PermissionFilter;
+use Myth\Auth\Filters\RoleFilter;
 
 class Filters extends BaseFilters
 {
+
     /**
      * Configures aliases for Filter classes to
      * make reading things nicer and simpler.
@@ -34,6 +38,9 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'login'         => LoginFilter::class,
+        'role'          => RoleFilter::class,
+        'permission'    => PermissionFilter::class,
     ];
 
     /**
@@ -106,5 +113,7 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'login' => ['before' => ['admin/post', 'admin/post/*']],
+    ];
 }
