@@ -10,19 +10,13 @@ class Post extends BaseController
 {
     public function index()
     {
-        // buat object model $post
         $post = new PostModel();
-        /*
- siapkan data untuk dikirim ke view dengan nama $posts
- dan isi datanya dengan post yang sudah terbit
- */
         $data['posts'] = $post->where(
             'status',
             'published'
-        )->findAll();
+        )->orderBy('created_at', 'DESC')->findAll();
         $data['title'] = 'Blog | MyBlog';
         $data['pageHeading'] = 'Daftar Artikel';
-        // kirim data ke view
         echo view('post', $data);
     }
     //-----------------------------------------------------
