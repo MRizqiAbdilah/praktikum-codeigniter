@@ -3,30 +3,22 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class Page extends BaseController
 {
-    public function about()
+    public function about(): RedirectResponse
     {
-        echo view('about', [
-            'title' => 'About | MyBlog',
-            'pageHeading' => 'Tentang Kami',
-        ]);
+        return redirect()->to(base_url('/#tentang'));
     }
 
-    public function contact()
+    public function contact(): RedirectResponse
     {
-        echo view('contact', [
-            'title' => 'Contact | MyBlog',
-            'pageHeading' => 'Hubungi Kami',
-        ]);
+        return redirect()->to(base_url('/#kontak'));
     }
 
-    public function faqs()
+    public function faqs(): RedirectResponse
     {
-        echo view('faqs', [
-            'title' => 'FAQ | MyBlog',
-            'pageHeading' => 'Pertanyaan yang Sering Ditanyakan',
-        ]);
+        return redirect()->to(base_url('/#faq'));
     }
 }

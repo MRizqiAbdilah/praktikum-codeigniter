@@ -3,6 +3,19 @@
 <?= $this->section('content') ?>
 
 <div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 bg-light">
+                <div class="card-body p-4 p-lg-5">
+                    <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">Pusat Konten MyBlog</span>
+                    <h2 class="display-6 fw-bold mb-3">Semua pengunjung bisa membaca blog ini, dan user yang login tetap bisa lanjut mengelola kontennya.</h2>
+                    <p class="text-muted mb-0">
+                        Halaman ini sekarang menjadi fokus utama area publik, sehingga artikel yang terbit langsung menjadi hal pertama yang paling menonjol untuk dijelajahi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <?php foreach ($posts as $post) : ?>
             <div class="col-lg-6 my-3">

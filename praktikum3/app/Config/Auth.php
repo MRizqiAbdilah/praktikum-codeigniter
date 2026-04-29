@@ -6,7 +6,7 @@ use Myth\Auth\Config\Auth as AuthConfig;
 
 class Auth extends AuthConfig
 {
-    public $viewLayout = 'auth';
+    // public $viewLayout = 'auth';
 
     /**
      * ---------------------------------------------------------------

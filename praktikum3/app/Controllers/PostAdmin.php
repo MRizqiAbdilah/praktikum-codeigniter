@@ -65,8 +65,10 @@ class PostAdmin extends BaseController
             throw PageNotFoundException::forPageNotFound();
         }
 
-        $data['title'] = 'Blog | MyBlog';
-        $data['pageHeading'] = 'Detail Artikel';
+        $data['title'] = $data['post']['title'] . ' | MyBlog';
+        $data['pageHeading'] = $data['post']['title'];
+        $data['pageSubheading'] = '';
+        $data['hideHero'] = true;
         echo view('post_detail', $data);
     }
 

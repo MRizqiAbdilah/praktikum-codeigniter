@@ -4,20 +4,14 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PostModel;
+use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Post extends BaseController
 {
-    public function index()
+    public function index(): RedirectResponse
     {
-        $post = new PostModel();
-        $data['posts'] = $post->where(
-            'status',
-            'published'
-        )->orderBy('created_at', 'DESC')->findAll();
-        $data['title'] = 'Blog | MyBlog';
-        $data['pageHeading'] = 'Daftar Artikel';
-        echo view('post', $data);
+        return redirect()->to(base_url('/#semua-artikel'));
     }
     //-----------------------------------------------------
     public function viewPost($slug)
@@ -35,6 +29,7 @@ class Post extends BaseController
         }
         $data['title'] = $data['post']['title'] . ' | MyBlog';
         $data['pageHeading'] = $data['post']['title'];
+        $data['hideHero'] = true;
         echo view('post_detail', $data);
     }
 }
