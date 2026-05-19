@@ -1,5 +1,5 @@
 def main():
-    print("Hello from django!")
+    print("Hello from project1!")
 
 
 if __name__ == "__main__":
